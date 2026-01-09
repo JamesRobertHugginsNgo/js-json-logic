@@ -1,0 +1,53 @@
+body {
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h2 {
+  background-color: #eee;
+  border-left: 1px solid #ccc;
+  margin: 1rem 0;
+  padding: .25rem 1rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+h3 {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+pre {
+  border: 1px solid #eee;
+  border-radius: .5rem;
+  max-height: 75vh;
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+}
+
+code {
+  font-family: Courier New, Courier, monospace;
+  font-size: 1rem;
+}
+
+.logic {
+  gap: .25rem;
+  margin: .5rem 0;
+  display: flex;
+
+  & > * {
+    flex: 1;
+  }
+}
+/*# sourceMappingURL=parcel.e21a6f25.css.map */

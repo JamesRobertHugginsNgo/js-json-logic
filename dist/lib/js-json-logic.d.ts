@@ -1,0 +1,14 @@
+export type Operator = (args: any[], vars: Block[]) => any;
+export type Operators = Record<string, Operator>;
+export type Block = Record<string, any>;
+export declare const blockMap: WeakMap<Block, Record<string, Block>>;
+export declare const operators: Operators;
+type Constructor<T> = new (...args: any[]) => T;
+export declare function addConstructorOperator<T>(name: string, cls: Constructor<T>): void;
+export declare function addPropOperators(prefix: string, suffix: string, obj: Record<string, any>, names: string[]): void;
+export declare function addMethodOperators(prefix: string, suffix: string, obj: Record<string, any>, names: string[]): void;
+export declare function addInstPropOperators(prefix: string, suffix: string, names: string[]): void;
+export declare function addInstMethodOperators(prefix: string, suffix: string, names: string[]): void;
+export declare function evaluate(rule: any, vars: Block[]): any;
+export default function jsJsonLogic(rule: any, data?: Block): any;
+export {};
