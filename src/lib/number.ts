@@ -1,10 +1,11 @@
-import { addConstructorOperator, addInstMethodOperators, addMethodOperators, addPropOperators, operators } from './js-json-logic.js';
+import { addConstantOperators, addConstructorOperator, addInstMethodOperators, addMethodOperators } from './add-operators.js';
+import { operators as ops } from './index.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 
 // CLASS AND CONSTRUCTOR
 
-operators['Number'] = () => {
+ops['Number'] = async () => {
 	return Number;
 };
 
@@ -12,7 +13,7 @@ addConstructorOperator('Number()', Number);
 
 // STATIC PROPERTIES
 
-addPropOperators('Number.', '', Number, [
+addConstantOperators('Number.', '', Number, [
 	'EPSILON',
 	'MAX_SAFE_INTEGER',
 	'MAX_VALUE',

@@ -1,14 +1,14 @@
-import makeCallback from './js-json-logic-make-callback.js';
-import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, evaluate,  operators } from './js-json-logic.js';
+import { Block } from './index.js';
 
-const _evaluate = evaluate;
+import { addConstructorOperator, addInstMethodOperators, addInstPropOperators } from './add-operators.js';
+import { evaluate as ev, operators as ops } from './index.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 
 // CLASS AND CONSTRUCTOR
 
-operators['Set'] = () => {
-	return String;
+ops['Set'] = async () => {
+	return Set;
 };
 
 addConstructorOperator('Set()', Set);
@@ -25,16 +25,20 @@ addInstPropOperators('Set:', '', [
 
 // INSTANCE METHODS
 
-operators['Map:forEach()'] = (args, vars) => {
-	const cbk = makeCallback(args, vars, ['value', 'key'], 1);
-	const set = _evaluate(args[0], vars);
-	let res: any;
+ops['Set:forEach()'] = async (args, vars) => {
+	const block: Block = {};
+	vars.push(block);
+	const inst = await ev(args[0], vars);
 	try {
-		res = set.forEach(cbk);
+		for (const value of inst) {
+			block['value'] = value;
+			for (let idx = 1, len = args.length; idx < len; idx++) {
+				await ev(args[idx], vars);
+			}
+		}
 	} finally {
 		vars.pop();
 	}
-	return res;
 };
 
 addInstMethodOperators('Set:', '()', [

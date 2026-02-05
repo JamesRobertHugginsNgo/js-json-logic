@@ -1,10 +1,11 @@
-import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators, operators } from './js-json-logic.js';
+import { addConstructorOperator, addInstMethodOperators, addMethodOperators } from './add-operators.js';
+import { operators as ops } from './index.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 
 // CLASS AND CONSTRUCTOR
 
-operators['Object'] = () => {
+ops['Object'] = async () => {
 	return Object;
 };
 

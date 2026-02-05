@@ -1,10 +1,11 @@
-import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators, operators } from './js-json-logic.js';
+import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators } from './add-operators.js';
+import { operators as ops } from './index.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/API/URL
 
 // CLASS AND CONSTRUCTOR
 
-operators['URL'] = () => {
+ops['URL'] = async () => {
 	return URL;
 };
 

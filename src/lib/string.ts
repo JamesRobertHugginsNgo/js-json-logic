@@ -1,10 +1,11 @@
-import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators, operators } from './js-json-logic.js';
+import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators } from './add-operators.js';
+import { operators as ops } from './index.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
 // CLASS AND CONSTRUCTOR
 
-operators['String'] = () => {
+ops['String'] = async () => {
 	return String;
 };
 
@@ -17,7 +18,7 @@ addConstructorOperator('String()', String);
 addMethodOperators('String.', '()', String, [
 	'fromCharCode',
 	'fromCodePoint',
-	'raw'
+	// 'raw'
 ]);
 
 // INSTANCE PROPERTIES

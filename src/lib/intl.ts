@@ -1,4 +1,4 @@
-import { addMethodOperators } from './js-json-logic.js';
+import { addMethodOperators } from './add-operators.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 

@@ -1,10 +1,11 @@
-import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators, addPropOperators, operators } from './js-json-logic.js';
+import { addConstructorOperator, addInstMethodOperators, addInstPropOperators, addMethodOperators } from './add-operators.js';
+import { operators as ops } from './index.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 
 // CLASS AND CONSTRUCTOR
 
-operators['RegExp'] = () => {
+ops['RegExp'] = async () => {
 	return RegExp;
 };
 

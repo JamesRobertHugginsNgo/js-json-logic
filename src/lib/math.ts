@@ -1,8 +1,8 @@
-import { addMethodOperators, addPropOperators } from './js-json-logic.js';
+import { addConstantOperators, addMethodOperators } from './add-operators.js';
 
 // REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 
-addPropOperators('Math.', '', Math, [
+addConstantOperators('Math.', '', Math, [
 	'E',
 	'LN10',
 	'LN2',
